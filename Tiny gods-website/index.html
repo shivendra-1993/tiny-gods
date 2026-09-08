@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fieldwork — Independent Design Agency</title>
+<meta name="description" content="Fieldwork is an independent design agency helping ambitious companies turn complex ideas into simple, meaningful digital experiences.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site" id="siteHeader">
+  <div class="wrap">
+    <a href="index.html" class="logo"><span class="dot"></span>Fieldwork</a>
+    <nav class="primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="contact.html" class="btn btn-primary">Start a Project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+      </a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="work.html">Work</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary">Start a Project</a>
+</nav>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow reveal in-view" id="heroEyebrow">Independent Design Agency — Est. 2016</div>
+      <h1 class="h1 hero-headline reveal in-view" id="heroHeadline" style="margin-top:20px;">We design digital <span class="accent-word">experiences</span> that move brands forward.</h1>
+      <p class="hero-sub reveal in-view" id="heroSub">We are an independent design agency helping ambitious companies turn complex ideas into simple, meaningful and memorable digital experiences.</p>
+      <div class="hero-ctas reveal in-view">
+        <a href="contact.html" class="btn btn-primary">Start a Project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+        </a>
+        <a href="work.html" class="btn btn-ghost">Explore Our Work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+        </a>
+      </div>
+      <div class="hero-tags reveal in-view" id="heroTags"><span>Strategy</span> · <span>UX/UI</span> · <span>Branding</span> · <span>Digital Products</span></div>
+    </div>
+    <div class="hero-visual reveal in-view">
+      <div class="pixel-grid" id="pixelGrid"></div>
+      <div class="hero-visual-label"><span>Fig. 01</span><span>Assembling ideas</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Brand Strategy <em>—</em> UX/UI Design <em>—</em> Digital Products <em>—</em> Design Systems <em>—</em> Visual Identity <em>—</em> Creative Direction <em>—</em></span>
+    <span>Brand Strategy <em>—</em> UX/UI Design <em>—</em> Digital Products <em>—</em> Design Systems <em>—</em> Visual Identity <em>—</em> Creative Direction <em>—</em></span>
+  </div>
+</div>
+
+<!-- ABOUT TEASER -->
+<section class="section about" id="about">
+  <div class="wrap">
+    <div class="about-copy reveal">
+      <div class="eyebrow" id="aboutEyebrow">About Us</div>
+      <h2 class="h2" id="aboutHeading" style="margin-top:16px;">We are a design partner, not just a design vendor.</h2>
+      <p id="aboutIntro">We partner with businesses at the intersection of strategy, technology and creativity — bringing clarity to complicated problems and creating experiences people actually want to use.</p>
+      <div class="stat-grid" id="statsGrid"></div>
+      <a href="about.html" class="btn btn-ghost" style="margin-top:40px;">More About Us
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+      </a>
+    </div>
+
+    <div class="about-panel reveal">
+      <div class="tag">Field Note — 03</div>
+      <div class="quote" id="aboutQuote">"Good design disappears. What's left is a business that finally makes sense to the people using it."</div>
+      <div class="who" id="aboutQuoteWho">Alex Morgan, Founder &amp; Creative Director</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 class="h2">What we do</h2>
+      <p class="lede">Six disciplines, one team — brought together depending on what the problem actually needs.</p>
+    </div>
+    <div class="service-list reveal" id="servicesList"></div>
+  </div>
+</section>
+
+<!-- WORK TEASER -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 class="h2">Selected work</h2>
+      <p class="lede">A few projects where strategy, design and technology came together to create meaningful impact.</p>
+    </div>
+    <div class="work-grid reveal" id="workGridTeaser"></div>
+    <a href="work.html" class="btn btn-primary reveal" style="margin-top:40px;">View All Work
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="section" id="clients">
+  <div class="wrap">
+    <div class="clients-copy reveal">
+      <div class="eyebrow">Clients</div>
+      <h2 class="h2" style="margin-top:16px;">Trusted by ambitious teams</h2>
+      <p>We work with startups, scale-ups and established organisations to create products and experiences that matter.</p>
+    </div>
+    <div class="logo-grid reveal" id="clientsGrid"></div>
+    <p class="trust-line reveal">From early-stage startups to global organisations, our work spans industries, markets and digital ecosystems.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal"><h2 class="h2">What our clients say</h2></div>
+    <div class="testi-grid reveal" id="testimonialsGrid"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-cta">
+      <h2 class="h2">Have a project in mind?</h2>
+      <a href="contact.html" class="btn btn-primary">Let's Talk
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+      </a>
+    </div>
+    <div class="footer-main">
+      <div class="footer-brand"><div class="logo"><span class="dot"></span>Fieldwork</div><p data-cms="footer.tagline">Designing what comes next.</p></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="work.html">Work</a></li></ul></div>
+      <div class="footer-col"><h4>Studio</h4><ul><li><a href="about.html#team">Team</a></li><li><a href="contact.html">Contact</a></li><li><a href="index.html#top">Back to top</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li><li><a href="#">Behance</a></li><li><a href="mailto:hello@fieldwork.studio" data-cms="contact.email">hello@fieldwork.studio</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div data-cms="footer.copyright">© 2026 Fieldwork Studio. All rights reserved.</div>
+      <div class="legal"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="site-data.js"></script>
+<script src="render.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

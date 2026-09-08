@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Fieldwork</title>
+<meta name="description" content="Start a project with Fieldwork. Tell us about your product, brand or digital experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site" id="siteHeader">
+  <div class="wrap">
+    <a href="index.html" class="logo"><span class="dot"></span>Fieldwork</a>
+    <nav class="primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="contact.html" class="btn btn-primary">Start a Project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+      </a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="work.html">Work</a>
+  <a href="contact.html" class="active">Contact</a>
+  <a href="contact.html" class="btn btn-primary">Start a Project</a>
+</nav>
+
+<main id="top">
+
+<section class="section contact" id="contact" style="padding-top:calc(150px + 2vw);">
+  <div class="wrap">
+    <div class="contact-left reveal">
+      <div class="eyebrow on-dark">Contact</div>
+      <h2 class="h2" style="margin-top:16px;">Let's create something meaningful.</h2>
+      <p class="contact-lede">Have a product, brand or digital experience that needs to move forward? Tell us a little about it and we'll get back to you.</p>
+
+      <dl class="contact-detail">
+        <dt>Email</dt><dd id="contactEmail">hello@fieldwork.studio</dd>
+        <dt>Phone</dt><dd id="contactPhone">+91 98765 43210</dd>
+        <dt>Location</dt><dd id="contactLocation">New Delhi, India</dd>
+      </dl>
+
+      <div class="contact-social">
+        <a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">Behance</a>
+      </div>
+
+      <p class="contact-note" id="contactNote">Tell us what you're working on, where you're stuck, or what you're hoping to build. We'll take it from there.</p>
+
+      <div class="contact-map-note">
+        <div class="mini">Response Time<strong id="contactResponseTime">Within 1 business day</strong></div>
+        <div class="mini">Studio Hours<strong id="contactHours">Mon – Fri, 10:00 – 19:00 IST</strong></div>
+      </div>
+    </div>
+
+    <div class="form-panel reveal" id="formPanel">
+      <h3>Tell us about your project</h3>
+      <form id="projectForm" novalidate>
+        <div class="form-grid">
+          <div class="field" data-field="name">
+            <label>Full Name <span class="req">*</span></label>
+            <input type="text" name="name" autocomplete="name">
+            <span class="err-msg">Please enter your full name.</span>
+          </div>
+          <div class="field" data-field="email">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" name="email" autocomplete="email">
+            <span class="err-msg">Please enter a valid email address.</span>
+          </div>
+          <div class="field">
+            <label>Company / Organization</label>
+            <input type="text" name="company" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" autocomplete="tel">
+          </div>
+          <div class="field" data-field="projectType">
+            <label>Project Type <span class="req">*</span></label>
+            <select name="projectType">
+              <option value="">Select one</option>
+              <option>UX/UI Design</option>
+              <option>Product Design</option>
+              <option>Website Design</option>
+              <option>Branding</option>
+              <option>Design System</option>
+              <option>UX Research</option>
+              <option>Other</option>
+            </select>
+            <span class="err-msg">Please select a project type.</span>
+          </div>
+          <div class="field">
+            <label>Budget Range</label>
+            <select name="budget">
+              <option value="">Select a range</option>
+              <option>Under $5K</option>
+              <option>$5K – $10K</option>
+              <option>$10K – $25K</option>
+              <option>$25K – $50K</option>
+              <option>$50K+</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label>Project Timeline</label>
+            <select name="timeline">
+              <option value="">Select a timeline</option>
+              <option>ASAP</option>
+              <option>1–2 Months</option>
+              <option>3–6 Months</option>
+              <option>6+ Months</option>
+              <option>Not Sure Yet</option>
+            </select>
+          </div>
+          <div class="field full" data-field="message">
+            <label>Tell us about your project <span class="req">*</span></label>
+            <textarea name="message" placeholder="Tell us about your project, goals and challenges..."></textarea>
+            <span class="err-msg">Please tell us a little about your project.</span>
+          </div>
+          <div class="field full">
+            <label>How did you hear about us?</label>
+            <input type="text" name="source">
+          </div>
+
+          <div class="checkline">
+            <input type="checkbox" id="consent" name="consent">
+            <label for="consent">I agree to be contacted regarding my enquiry.</label>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary" id="submitBtn">Send Project Enquiry
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+            </button>
+            <span class="form-status" id="formStatus"></span>
+          </div>
+        </div>
+      </form>
+
+      <div class="success-state" id="successState">
+        <div class="success-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div>
+        <h3>Thank you!</h3>
+        <p>Your enquiry has been received. We'll be in touch shortly to talk through your project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-cta">
+      <h2 class="h2">Have a project in mind?</h2>
+      <a href="contact.html" class="btn btn-primary">Let's Talk
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+      </a>
+    </div>
+    <div class="footer-main">
+      <div class="footer-brand"><div class="logo"><span class="dot"></span>Fieldwork</div><p data-cms="footer.tagline">Designing what comes next.</p></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="work.html">Work</a></li></ul></div>
+      <div class="footer-col"><h4>Studio</h4><ul><li><a href="about.html#team">Team</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html#top">Back to top</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li><li><a href="#">Behance</a></li><li><a href="mailto:hello@fieldwork.studio" data-cms="contact.email">hello@fieldwork.studio</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div data-cms="footer.copyright">© 2026 Fieldwork Studio. All rights reserved.</div>
+      <div class="legal"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="site-data.js"></script>
+<script src="render.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
