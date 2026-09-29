@@ -1,0 +1,400 @@
+{
+  "brand": {
+    "name": "Fieldwork",
+    "ctaLabel": "Start a Project"
+  },
+  "hero": {
+    "eyebrow": "Independent Design Agency — Est. 2016",
+    "headlinePre": "We design digital",
+    "headlineAccent": "experiences",
+    "headlinePost": "that move brands forward.",
+    "sub": "We are an independent design agency helping ambitious companies turn complex ideas into simple, meaningful and memorable digital experiences.",
+    "tags": "Strategy · UX/UI · Branding · Digital Products"
+  },
+  "about": {
+    "eyebrow": "About Us",
+    "heading": "We are a design partner, not just a design vendor.",
+    "intro": "We partner with businesses at the intersection of strategy, technology and creativity. From defining a brand's direction to designing complex digital products, we bring clarity to complicated problems and create experiences people actually want to use.",
+    "extra": "We're independent by choice — small enough to stay close to every project, experienced enough to handle the ones other studios turn down.",
+    "quote": "Good design disappears. What's left is a business that finally makes sense to the people using it.",
+    "quoteWho": "Alex Morgan, Founder & Creative Director"
+  },
+  "stats": [
+    {
+      "num": 10,
+      "suffix": "+",
+      "label": "Years of Experience"
+    },
+    {
+      "num": 150,
+      "suffix": "+",
+      "label": "Projects Delivered"
+    },
+    {
+      "num": 40,
+      "suffix": "+",
+      "label": "Brands Transformed"
+    },
+    {
+      "num": 12,
+      "suffix": "",
+      "label": "Countries Reached"
+    }
+  ],
+  "services": [
+    {
+      "name": "Brand Strategy",
+      "desc": "Brand positioning, identity strategy, research and brand direction."
+    },
+    {
+      "name": "UX/UI Design",
+      "desc": "User research, information architecture, wireframes, interaction design and high-fidelity UI."
+    },
+    {
+      "name": "Digital Products",
+      "desc": "Websites, SaaS platforms, mobile applications and enterprise products."
+    },
+    {
+      "name": "Design Systems",
+      "desc": "Scalable design systems, component libraries, design tokens and documentation."
+    },
+    {
+      "name": "Branding & Visual Identity",
+      "desc": "Logos, visual systems, typography, colour systems and brand guidelines."
+    },
+    {
+      "name": "Creative Design",
+      "desc": "Campaigns, marketing websites, digital experiences and creative direction."
+    }
+  ],
+  "servicesPage": {
+    "eyebrow": "Services",
+    "heading": "What we do, and how we do it.",
+    "intro": "Six disciplines that we bring together differently depending on what a project actually needs — from a single brand sprint to a full product rebuild."
+  },
+  "work": [
+    {
+      "id": "fintech",
+      "title": "Fintech Platform",
+      "category": "UX/UI · Product Design",
+      "size": "span-4",
+      "gradient": "linear-gradient(135deg,#0F8B4C,#0A0A0A)",
+      "image": "/images/goyal%20motors.png",
+      "client": "Finova",
+      "industry": "Financial Services",
+      "servicesProvided": "UX Research, UI Design, Design System",
+      "year": "2025",
+      "overview": "A ground-up redesign of a personal finance platform used by over 200,000 people to track spending, budget and invest.",
+      "challenge": "Finova's existing product had grown feature by feature over four years with no shared design language. Core tasks like setting a budget took too many steps, and new users dropped off before reaching the features that made the product valuable.",
+      "approach": "We started with usage data and 14 customer interviews to map where people actually got stuck. From there we rebuilt the information architecture around three jobs — track, budget, grow — and prototyped the new flows with real account data in weekly sessions with the Finova team.",
+      "solution": "The result is a cleaner product built on a new design system: a simplified dashboard, a redesigned budgeting flow that takes a third of the steps, and a component library the internal team now maintains and extends themselves.",
+      "stats": [
+        {
+          "num": 38,
+          "suffix": "%",
+          "label": "Faster onboarding completion"
+        },
+        {
+          "num": 52,
+          "suffix": "%",
+          "label": "Increase in weekly active use"
+        },
+        {
+          "num": 4.7,
+          "suffix": "/5",
+          "label": "Post-launch satisfaction score"
+        }
+      ]
+    },
+    {
+      "id": "healthcare",
+      "title": "Healthcare Digital Experience",
+      "category": "UX/UI · Design System",
+      "size": "span-2",
+      "gradient": "linear-gradient(160deg,#8FE3B0,#0F8B4C)",
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=85",
+      "client": "Northstar Health",
+      "industry": "Healthcare",
+      "servicesProvided": "UX/UI Design, Design System, Accessibility Audit",
+      "year": "2024",
+      "overview": "A patient portal redesign for a healthcare network serving over 40 clinics, built around clarity and accessibility for a wide range of ages and abilities.",
+      "challenge": "Patients were missing appointments and struggling to find test results in a portal that hadn't been redesigned in nearly a decade. Accessibility complaints were rising, and clinic staff were fielding calls the portal should have prevented.",
+      "approach": "We ran accessibility audits alongside in-clinic observation sessions with patients across different age groups, then rebuilt the core flows — booking, results, messaging — around a WCAG-conscious component library from day one.",
+      "solution": "A calmer, higher-contrast interface with a simplified appointment flow, plain-language results pages, and a documented design system the clinical software team now ships new features against.",
+      "stats": [
+        {
+          "num": 29,
+          "suffix": "%",
+          "label": "Fewer missed appointments"
+        },
+        {
+          "num": 61,
+          "suffix": "%",
+          "label": "Drop in support call volume"
+        },
+        {
+          "num": 100,
+          "suffix": "%",
+          "label": "WCAG AA conformance"
+        }
+      ]
+    },
+    {
+      "id": "fashion",
+      "title": "Luxury Fashion Brand",
+      "category": "Branding · E-commerce",
+      "size": "span-2s",
+      "gradient": "linear-gradient(135deg,#F0F0F0,#0A0A0A)",
+      "image": "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=85",
+      "client": "Aster",
+      "industry": "Fashion & Retail",
+      "servicesProvided": "Brand Strategy, Visual Identity, E-commerce Design",
+      "year": "2024",
+      "overview": "A full brand identity and flagship e-commerce experience for an independent luxury fashion label expanding into direct-to-consumer.",
+      "challenge": "Aster had strong wholesale relationships but no consistent brand identity of its own, and no direct e-commerce presence — leaving it dependent on retail partners to tell its story.",
+      "approach": "We developed a brand strategy and visual identity from the ground up — name treatment, typography, colour system, photography direction — then translated it into a flagship online store designed to feel as considered as the product itself.",
+      "solution": "A monochrome, editorial identity system and a custom e-commerce experience with an emphasis on large imagery, minimal navigation, and a checkout built for conversion without feeling transactional.",
+      "stats": [
+        {
+          "num": 3.1,
+          "suffix": "x",
+          "label": "Direct-to-consumer revenue growth"
+        },
+        {
+          "num": 44,
+          "suffix": "%",
+          "label": "Increase in average order value"
+        },
+        {
+          "num": 18,
+          "suffix": "pts",
+          "label": "Brand recognition lift"
+        }
+      ]
+    },
+    {
+      "id": "saas",
+      "title": "Enterprise SaaS Platform",
+      "category": "Product Design · UX Strategy",
+      "size": "span-4",
+      "gradient": "linear-gradient(110deg,#0A0A0A,#0F8B4C 80%)",
+      "client": "Vertex",
+      "industry": "Enterprise Software",
+      "servicesProvided": "UX Strategy, Product Design, Design System",
+      "year": "2025",
+      "overview": "A redesign of Vertex's core operations platform, used daily by enterprise teams to manage complex, multi-step workflows.",
+      "challenge": "The product had accumulated years of feature requests with no unifying UX strategy, resulting in inconsistent patterns across modules and a steep learning curve for new customers.",
+      "approach": "We audited every module against a shared set of interaction patterns, consolidated overlapping features, and worked with Vertex's product and engineering teams to phase the rebuild without disrupting existing customers.",
+      "solution": "A unified design system rolled out module by module, a redesigned navigation model that scales to hundreds of workflows, and a measurable drop in time-to-proficiency for new customer teams.",
+      "stats": [
+        {
+          "num": 47,
+          "suffix": "%",
+          "label": "Faster time-to-proficiency"
+        },
+        {
+          "num": 31,
+          "suffix": "%",
+          "label": "Reduction in support tickets"
+        },
+        {
+          "num": 9,
+          "suffix": "",
+          "label": "Modules unified under one system"
+        }
+      ]
+    },
+    {
+      "id": "edtech",
+      "title": "Education Technology Platform",
+      "category": "UX/UI · Research",
+      "size": "span-3",
+      "gradient": "linear-gradient(150deg,#0F8B4C,#8FE3B0)",
+      "client": "Lumina",
+      "industry": "Education",
+      "servicesProvided": "UX Research, UX/UI Design",
+      "year": "2023",
+      "overview": "A learning platform redesign for a K-12 edtech company, built around research with both students and teachers.",
+      "challenge": "Teachers found the assignment and grading tools confusing, and student engagement dropped off sharply after the first few weeks of each term.",
+      "approach": "We ran separate research tracks with teachers and students, since their needs pulled in different directions, then designed two tailored experiences from a shared underlying system.",
+      "solution": "A simplified teacher dashboard for assigning and grading work in fewer steps, and a more visual, encouraging student experience designed to sustain engagement across a full term.",
+      "stats": [
+        {
+          "num": 56,
+          "suffix": "%",
+          "label": "Improved term-long engagement"
+        },
+        {
+          "num": 33,
+          "suffix": "%",
+          "label": "Faster grading workflow"
+        },
+        {
+          "num": 4.6,
+          "suffix": "/5",
+          "label": "Teacher satisfaction score"
+        }
+      ]
+    },
+    {
+      "id": "mobility",
+      "title": "Mobility & Transportation",
+      "category": "Digital Product · UX/UI",
+      "size": "span-3",
+      "gradient": "linear-gradient(135deg,#0A0A0A,#4D4D4D)",
+      "client": "Orbit",
+      "industry": "Mobility & Transportation",
+      "servicesProvided": "Product Design, UX/UI Design",
+      "year": "2023",
+      "overview": "A rider app for a multi-modal mobility platform combining bikes, scooters and transit passes into a single experience.",
+      "challenge": "Riders had to switch between separate apps for each mode of transport, and pricing across modes was confusing enough that many people defaulted to a single option out of habit.",
+      "approach": "We mapped full rider journeys across modes and built a unified booking and payment flow, with a pricing comparison view designed to make multi-modal trips feel like the obvious choice.",
+      "solution": "One app covering bikes, scooters and transit, with real-time availability, unified payment, and a route planner that compares cost and time across every available mode.",
+      "stats": [
+        {
+          "num": 2.4,
+          "suffix": "x",
+          "label": "Increase in multi-modal trips"
+        },
+        {
+          "num": 41,
+          "suffix": "%",
+          "label": "Faster average checkout"
+        },
+        {
+          "num": 12,
+          "suffix": "",
+          "label": "Cities launched in year one"
+        }
+      ]
+    }
+  ],
+  "clients": [
+    "NOVA",
+    "Vertex",
+    "Aster",
+    "Northstar",
+    "Finova",
+    "Lumina",
+    "Orbit",
+    "Elevate",
+    "Vercelix",
+    "Urban Labs"
+  ],
+  "testimonials": [
+    {
+      "quote": "The team didn't just redesign our product — they helped us rethink the entire experience around our customers.",
+      "who": "Product Director, Fintech Company"
+    },
+    {
+      "quote": "Their ability to combine strategy with exceptional visual design made them an invaluable partner.",
+      "who": "Founder, Technology Startup"
+    },
+    {
+      "quote": "The new experience transformed how our customers interact with our platform, from day one.",
+      "who": "VP Product, Enterprise Company"
+    }
+  ],
+  "mission": {
+    "pre": "To make complex ideas",
+    "em": "simple",
+    "post": ", useful and meaningful through design."
+  },
+  "vision": {
+    "pre": "A future where every digital interaction feels",
+    "em": "intuitive",
+    "post": ", inclusive and human."
+  },
+  "process": [
+    {
+      "title": "Discover",
+      "desc": "Understand the business, users and opportunity."
+    },
+    {
+      "title": "Define",
+      "desc": "Turn research into clear problems, priorities and strategy."
+    },
+    {
+      "title": "Explore",
+      "desc": "Generate ideas, concepts and possible solutions."
+    },
+    {
+      "title": "Design",
+      "desc": "Transform the strategy into intuitive digital experiences."
+    },
+    {
+      "title": "Deliver",
+      "desc": "Build, test, refine and launch with confidence."
+    }
+  ],
+  "team": [
+    {
+      "initials": "AM",
+      "name": "Alex Morgan",
+      "role": "Founder & Creative Director",
+      "bio": "Sets the creative direction and leads client partnerships from first call to final launch.",
+      "gradient": "linear-gradient(135deg,#0F8B4C,#0A0A0A)"
+    },
+    {
+      "initials": "SC",
+      "name": "Sarah Chen",
+      "role": "Head of UX",
+      "bio": "Leads research and experience strategy across every engagement.",
+      "gradient": "linear-gradient(135deg,#8FE3B0,#0F8B4C)"
+    },
+    {
+      "initials": "DC",
+      "name": "Daniel Carter",
+      "role": "Senior Product Designer",
+      "bio": "Turns strategy into interfaces people can actually use, end to end.",
+      "gradient": "linear-gradient(135deg,#0A0A0A,#4D4D4D)"
+    },
+    {
+      "initials": "MP",
+      "name": "Maya Patel",
+      "role": "Brand Strategist",
+      "bio": "Shapes positioning and narrative for brands entering new markets.",
+      "gradient": "linear-gradient(135deg,#0F8B4C,#8FE3B0)"
+    },
+    {
+      "initials": "RW",
+      "name": "Ryan Williams",
+      "role": "UI / Visual Designer",
+      "bio": "Obsessed with type, colour and the details most people never notice.",
+      "gradient": "linear-gradient(135deg,#4D4D4D,#0A0A0A)"
+    },
+    {
+      "initials": "NK",
+      "name": "Nina Kapoor",
+      "role": "UX Researcher",
+      "bio": "Runs the studies and interviews that keep decisions grounded in reality.",
+      "gradient": "linear-gradient(135deg,#0A5C33,#8FE3B0)"
+    },
+    {
+      "initials": "JT",
+      "name": "Jordan Tan",
+      "role": "Design Systems Lead",
+      "bio": "Builds the components and tokens that keep products consistent at scale.",
+      "gradient": "linear-gradient(135deg,#0A0A0A,#0F8B4C)"
+    },
+    {
+      "initials": "EO",
+      "name": "Elena Osei",
+      "role": "Delivery & Ops Lead",
+      "bio": "Keeps projects moving on time, on scope and without the chaos.",
+      "gradient": "linear-gradient(135deg,#8FE3B0,#0A0A0A)"
+    }
+  ],
+  "contact": {
+    "email": "hello@fieldwork.studio",
+    "phone": "+91 98765 43210",
+    "location": "New Delhi, India",
+    "note": "Tell us what you're working on, where you're stuck, or what you're hoping to build. We'll take it from there.",
+    "responseTime": "Within 1 business day",
+    "hours": "Mon – Fri, 10:00 – 19:00 IST"
+  },
+  "footer": {
+    "tagline": "Designing what comes next.",
+    "copyright": "© 2026 Fieldwork Studio. All rights reserved."
+  }
+}

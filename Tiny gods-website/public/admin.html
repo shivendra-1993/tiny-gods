@@ -9,122 +9,140 @@
 <link rel="stylesheet" href="styles.css">
 <style>
   body{ background:var(--paper-dim); }
-  .admin-shell{ max-width:1040px; margin:0 auto; padding:40px var(--gutter) 120px; }
-  .admin-top{
-    position:sticky; top:0; z-index:50; background:var(--ink); color:var(--paper);
-    padding:16px var(--gutter); display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap; gap:14px; margin:0 calc(-1 * var(--gutter)) 36px;
-  }
-  .admin-top .logo{ font-size:17px; }
-  .admin-top .logo .dot{ background:var(--accent); }
-  .admin-top-actions{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
-  .admin-top .btn{ padding:11px 18px; font-size:13px; }
-  .admin-top .btn-ghost{ color:var(--paper); border-color:rgba(255,255,255,.4); }
-  .admin-top .btn-ghost:hover{ background:var(--paper); color:var(--ink); }
-  .file-input-label{
-    font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.05em;
-    color:rgba(255,255,255,.6); cursor:pointer; border-bottom:1px solid rgba(255,255,255,.35); padding-bottom:2px;
-  }
-  #importInput{ display:none; }
-
-  .admin-intro{ margin-bottom:44px; }
-  .admin-intro h1{ font-family:var(--display); font-weight:700; text-transform:uppercase; font-size:clamp(28px,4vw,40px); letter-spacing:-.01em; }
-  .admin-intro p{ margin-top:12px; color:var(--ink-soft); max-width:640px; font-size:15.5px; line-height:1.6; }
-  .admin-status{
-    margin-top:18px; font-family:var(--mono); font-size:12.5px; padding:10px 14px; border-left:2px solid var(--accent);
-    background:var(--accent-ink); display:none;
-  }
-  .admin-status.show{ display:block; }
-
-  .panel{ background:var(--paper); border:1px solid var(--line); margin-bottom:22px; }
-  .panel-head{
-    display:flex; align-items:center; justify-content:space-between; gap:14px;
-    padding:20px 24px; cursor:pointer; user-select:none;
-  }
-  .panel-head h2{ font-family:var(--display); font-weight:600; text-transform:uppercase; font-size:17px; letter-spacing:.01em; }
-  .panel-head .count{ font-family:var(--mono); font-size:11.5px; color:var(--ink-soft); margin-left:10px; }
-  .panel-head .chev{ width:20px; height:20px; flex:none; transition:transform .35s var(--ease); }
-  .panel.open .panel-head .chev{ transform:rotate(180deg); }
-  .panel-body{ display:none; padding:0 24px 26px; border-top:1px solid var(--line); }
-  .panel.open .panel-body{ display:block; padding-top:22px; }
-
-  .f-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
-  .f-row.full{ grid-template-columns:1fr; }
-  .f-group{ display:flex; flex-direction:column; gap:6px; }
-  .f-group label{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); }
-  .f-group input, .f-group textarea{
-    border:1px solid var(--line-strong); background:var(--paper); padding:10px 12px; font-size:14.5px; color:var(--ink);
-    font-family:var(--body); transition:border-color .25s ease;
-  }
-  .f-group input:focus, .f-group textarea:focus{ border-color:var(--accent); outline:none; }
-  .f-group textarea{ resize:vertical; min-height:64px; }
-
-  .repeat-item{ border:1px solid var(--line); padding:18px; margin-bottom:14px; position:relative; background:var(--paper-dim); }
-  .repeat-item .item-num{ font-family:var(--mono); font-size:11px; color:var(--accent); margin-bottom:10px; display:block; }
-  .repeat-item .remove-btn{
-    position:absolute; top:14px; right:14px; font-family:var(--mono); font-size:11px; text-transform:uppercase;
-    color:var(--ink-soft); border-bottom:1px solid var(--line-strong); cursor:pointer; background:none; border-top:none; border-left:none; border-right:none; padding:0 0 2px;
-  }
-  .repeat-item .remove-btn:hover{ color:#C23B2C; border-color:#C23B2C; }
-  .add-btn{
-    font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.05em;
-    border:1px dashed var(--line-strong); padding:12px; width:100%; text-align:center; background:none; color:var(--ink-soft);
-    transition:border-color .25s ease, color .25s ease;
-  }
-  .add-btn:hover{ border-color:var(--accent); color:var(--accent); }
-
-  .swatch-row{ display:flex; align-items:center; gap:10px; }
-  .swatch{ width:34px; height:34px; border:1px solid var(--line); flex:none; }
-
-  .helper{ font-size:12.5px; color:var(--ink-soft); margin-top:-6px; margin-bottom:14px; }
+  .lead-item{ border:1px solid var(--line); padding:16px 18px; margin-bottom:10px; background:var(--bg-soft); }
+  .lead-top{ display:flex; justify-content:space-between; gap:12px; align-items:baseline; flex-wrap:wrap; }
+  .lead-name{ font-family:var(--display); font-weight:600; font-size:15.5px; }
+  .lead-meta{ font-family:var(--mono); font-size:11px; color:var(--text-soft); text-transform:uppercase; }
+  .lead-detail{ font-size:13.5px; color:var(--text-soft); margin-top:8px; line-height:1.5; }
+  .lead-tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+  .lead-tag{ font-family:var(--mono); font-size:10.5px; text-transform:uppercase; background:var(--paper-dim); padding:3px 8px; }
+  .lead-del{ font-family:var(--mono); font-size:11px; text-transform:uppercase; color:var(--text-soft); border-bottom:1px solid var(--line-strong); background:none; border-top:none; border-left:none; border-right:none; cursor:pointer; padding:0 0 2px; flex:none; }
+  .lead-del:hover{ color:#E5564A; border-color:#E5564A; }
+  .empty-note{ font-size:13.5px; color:var(--text-soft); padding:20px 0; }
 </style>
 </head>
 <body>
 
-<div class="admin-shell">
+<div class="admin-shell" id="loginView" style="display:none;">
+  <div class="admin-top">
+    <a href="index.html" class="logo"><span class="dot"></span>Fieldwork — Content Admin</a>
+  </div>
+  <div class="login-card">
+    <h2>Sign in</h2>
+    <form id="loginForm">
+      <div class="f-group">
+        <label>Admin Password</label>
+        <input type="password" id="passwordInput" autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Sign In</button>
+      <div class="err" id="loginErr">Incorrect password.</div>
+    </form>
+  </div>
+</div>
+
+<div class="admin-shell" id="adminView" style="display:none;">
   <div class="admin-top">
     <a href="index.html" class="logo"><span class="dot"></span>Fieldwork — Content Admin</a>
     <div class="admin-top-actions">
-      <label class="file-input-label" for="importInput">Import site-data.js</label>
-      <input type="file" id="importInput" accept=".js">
-      <button class="btn btn-ghost" id="resetBtn">Reset Changes</button>
-      <button class="btn btn-primary" id="downloadBtn">Download site-data.js
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+      <button class="btn btn-ghost" id="logoutBtn">Log Out</button>
+      <button class="btn btn-ghost" id="revertBtn">Revert Changes</button>
+      <button class="btn btn-primary" id="saveBtn">Save All Changes
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
       </button>
     </div>
   </div>
 
   <div class="admin-intro">
     <h1>Content Admin</h1>
-    <p>This edits the content that drives every page of the site — hero copy, about text, services, work, clients, testimonials, team, process and contact details. Nothing saves automatically: when you're happy with your changes, click <strong>Download site-data.js</strong> and replace the existing <code>site-data.js</code> file in your site folder with the downloaded one. Refresh any page to see the update.</p>
+    <p>Edits here save straight to the live site through the backend — no file to download or re-upload. Add or edit a project in the Work panel and it appears on Work, Home and its own case-study page immediately after you save. Click <strong>Save All Changes</strong> when you're done editing; <strong>Revert Changes</strong> discards anything unsaved and reloads the last saved version.</p>
     <div class="admin-status" id="adminStatus"></div>
   </div>
 
   <div id="panels"></div>
 </div>
 
-<script src="site-data.js"></script>
 <script>
 (function(){
   "use strict";
 
-  // Work with a deep copy so edits don't mutate SITE_DATA until exported.
-  var data = JSON.parse(JSON.stringify(SITE_DATA));
-
-  var panelsEl = document.getElementById('panels');
+  var loginView = document.getElementById('loginView');
+  var adminView = document.getElementById('adminView');
   var statusEl = document.getElementById('adminStatus');
+  var panelsEl = document.getElementById('panels');
+  var data = null;       // working copy, edited in the form
+  var savedData = null;  // last-saved copy, for Revert
+
+  function showStatus(msg, isError){
+    statusEl.textContent = msg;
+    statusEl.classList.toggle('error', !!isError);
+    statusEl.classList.add('show');
+    setTimeout(function(){ statusEl.classList.remove('show'); }, 3500);
+  }
+
+  /* ---------- auth ---------- */
+  function checkSession(){
+    fetch('/api/session').then(function(r){ return r.json(); }).then(function(s){
+      if(s.authenticated){ loginView.style.display = 'none'; adminView.style.display = 'block'; loadContent(); }
+      else { loginView.style.display = 'block'; adminView.style.display = 'none'; }
+    });
+  }
+
+  document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var pw = document.getElementById('passwordInput').value;
+    var err = document.getElementById('loginErr');
+    err.classList.remove('show');
+    fetch('/api/login', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw })
+    }).then(function(r){
+      if(!r.ok) throw new Error('bad');
+      return r.json();
+    }).then(function(){
+      document.getElementById('passwordInput').value = '';
+      checkSession();
+    }).catch(function(){
+      err.classList.add('show');
+    });
+  });
+
+  document.getElementById('logoutBtn').addEventListener('click', function(){
+    fetch('/api/logout', { method: 'POST' }).then(checkSession);
+  });
+
+  document.getElementById('revertBtn').addEventListener('click', function(){
+    if(confirm('Discard unsaved changes and reload the last saved version?')) loadContent();
+  });
+
+  document.getElementById('saveBtn').addEventListener('click', function(){
+    fetch('/api/content', {
+      method: 'PUT', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function(r){
+      if(!r.ok) throw new Error('Save failed');
+      return r.json();
+    }).then(function(saved){
+      savedData = JSON.parse(JSON.stringify(saved));
+      showStatus('Saved — live on the site now.');
+    }).catch(function(){
+      showStatus('Could not save. Check the server is running and try again.', true);
+    });
+  });
+
+  /* ---------- load content + build form ---------- */
+  function loadContent(){
+    fetch('/api/content').then(function(r){ return r.json(); }).then(function(D){
+      data = JSON.parse(JSON.stringify(D));
+      savedData = JSON.parse(JSON.stringify(D));
+      renderForm();
+      loadLeads();
+    });
+  }
 
   function chevron(){
     return '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
   }
 
-  function showStatus(msg){
-    statusEl.textContent = msg;
-    statusEl.classList.add('show');
-    setTimeout(function(){ statusEl.classList.remove('show'); }, 3200);
-  }
-
-  /* ---------- generic field helpers ---------- */
   function textField(labelText, value, onInput, multiline){
     var wrap = document.createElement('div');
     wrap.className = 'f-group';
@@ -146,6 +164,7 @@
     label.textContent = labelText;
     var input = document.createElement('input');
     input.type = 'number';
+    input.step = 'any';
     input.value = value;
     input.addEventListener('input', function(){ onInput(parseFloat(input.value) || 0); });
     wrap.appendChild(label);
@@ -153,9 +172,27 @@
     return wrap;
   }
 
-  function row(children, full){
+  function selectField(labelText, value, options, onInput){
+    var wrap = document.createElement('div');
+    wrap.className = 'f-group';
+    var label = document.createElement('label');
+    label.textContent = labelText;
+    var select = document.createElement('select');
+    options.forEach(function(opt){
+      var o = document.createElement('option');
+      o.value = opt; o.textContent = opt;
+      if(opt === value) o.selected = true;
+      select.appendChild(o);
+    });
+    select.addEventListener('change', function(){ onInput(select.value); });
+    wrap.appendChild(label);
+    wrap.appendChild(select);
+    return wrap;
+  }
+
+  function row(children, cls){
     var r = document.createElement('div');
-    r.className = 'f-row' + (full ? ' full' : '');
+    r.className = 'f-row' + (cls ? ' ' + cls : '');
     children.forEach(function(c){ r.appendChild(c); });
     return r;
   }
@@ -187,9 +224,7 @@
         box.appendChild(tag);
         if(items.length > 1){
           var rm = document.createElement('button');
-          rm.type = 'button';
-          rm.className = 'remove-btn';
-          rm.textContent = 'Remove';
+          rm.type = 'button'; rm.className = 'remove-btn'; rm.textContent = 'Remove';
           rm.addEventListener('click', function(){ items.splice(i,1); redraw(); });
           box.appendChild(rm);
         }
@@ -197,9 +232,7 @@
         container.appendChild(box);
       });
       var addBtn = document.createElement('button');
-      addBtn.type = 'button';
-      addBtn.className = 'add-btn';
-      addBtn.textContent = '+ Add ' + itemLabel;
+      addBtn.type = 'button'; addBtn.className = 'add-btn'; addBtn.textContent = '+ Add ' + itemLabel;
       addBtn.addEventListener('click', function(){ items.push(makeBlank()); redraw(); });
       container.appendChild(addBtn);
     }
@@ -246,8 +279,20 @@
     }, function(){ return { num: 0, suffix: '', label: 'New Stat' }; });
   }));
 
-  /* ================= SERVICES ================= */
+  /* ================= SERVICES PAGE INTRO ================= */
+  panelsEl.appendChild(panel('Services Page', '', function(body){
+    if(!data.servicesPage) data.servicesPage = { eyebrow: 'Services', heading: '', intro: '' };
+    body.appendChild(textField('Eyebrow', data.servicesPage.eyebrow, function(v){ data.servicesPage.eyebrow = v; }));
+    body.appendChild(textField('Heading', data.servicesPage.heading, function(v){ data.servicesPage.heading = v; }, true));
+    body.appendChild(textField('Intro copy', data.servicesPage.intro, function(v){ data.servicesPage.intro = v; }, true));
+  }));
+
+  /* ================= SERVICES LIST ================= */
   panelsEl.appendChild(panel('Services', data.services.length + ' items', function(body){
+    var helper = document.createElement('p');
+    helper.className = 'helper';
+    helper.textContent = 'Shown on the Home, Work and Services pages.';
+    body.appendChild(helper);
     var list = document.createElement('div');
     body.appendChild(list);
     repeatList(list, data.services, 'Service', function(box, item){
@@ -256,20 +301,23 @@
     }, function(){ return { name: 'New Service', desc: '' }; });
   }));
 
-  /* ================= WORK ================= */
+  /* ================= WORK / CASE STUDIES ================= */
   panelsEl.appendChild(panel('Work / Case Studies', data.work.length + ' items', function(body){
     var helper = document.createElement('p');
     helper.className = 'helper';
-    helper.textContent = 'The ID links each card to its full case study (case-study.html?id=…) — matching entries live in case-study-data.js.';
+    helper.textContent = 'Each project becomes a portfolio card and its own full case-study page (case-study.html?id=…) automatically.';
     body.appendChild(helper);
     var list = document.createElement('div');
     body.appendChild(list);
     repeatList(list, data.work, 'Project', function(box, item){
       box.appendChild(row([
         textField('Title', item.title, function(v){ item.title = v; }),
-        textField('ID (matches case-study-data.js)', item.id, function(v){ item.id = v; })
+        textField('Card ID (used in the URL — letters, numbers, dashes)', item.id, function(v){ item.id = v; })
       ]));
-      box.appendChild(textField('Category', item.category, function(v){ item.category = v; }));
+      box.appendChild(row([
+        textField('Category (shown on the card)', item.category, function(v){ item.category = v; }),
+        selectField('Card size', item.size, ['span-2','span-2s','span-3','span-4'], function(v){ item.size = v; })
+      ]));
       var swatchRow = document.createElement('div');
       swatchRow.className = 'f-group';
       var swLabel = document.createElement('label');
@@ -288,15 +336,56 @@
       swatchRow.appendChild(swLabel);
       swatchRow.appendChild(swInner);
       box.appendChild(swatchRow);
-    }, function(){ return { id: 'new-project', title: 'New Project', category: 'Category', size: 'span-3', gradient: 'linear-gradient(135deg,#0F8B4C,#0A0A0A)' }; });
+
+      var csBox = document.createElement('div');
+      csBox.className = 'nested-box';
+      var csLabel = document.createElement('label');
+      csLabel.className = 'group-label';
+      csLabel.textContent = 'Case study details';
+      csBox.appendChild(csLabel);
+      csBox.appendChild(row([
+        textField('Client', item.client, function(v){ item.client = v; }),
+        textField('Year', item.year, function(v){ item.year = v; })
+      ]));
+      csBox.appendChild(row([
+        textField('Industry', item.industry, function(v){ item.industry = v; }),
+        textField('Services provided', item.servicesProvided, function(v){ item.servicesProvided = v; })
+      ]));
+      csBox.appendChild(textField('Overview', item.overview, function(v){ item.overview = v; }, true));
+      csBox.appendChild(textField('The Challenge', item.challenge, function(v){ item.challenge = v; }, true));
+      csBox.appendChild(textField('Our Approach', item.approach, function(v){ item.approach = v; }, true));
+      csBox.appendChild(textField('The Solution', item.solution, function(v){ item.solution = v; }, true));
+
+      var statsLabel = document.createElement('label');
+      statsLabel.className = 'group-label';
+      statsLabel.style.marginTop = '16px';
+      statsLabel.textContent = 'Results stats';
+      csBox.appendChild(statsLabel);
+      var statsList = document.createElement('div');
+      csBox.appendChild(statsList);
+      if(!Array.isArray(item.stats)) item.stats = [];
+      repeatList(statsList, item.stats, 'Result', function(sbox, sitem){
+        sbox.appendChild(row([
+          numField('Number', sitem.num, function(v){ sitem.num = v; }),
+          textField('Suffix (e.g. "%")', sitem.suffix, function(v){ sitem.suffix = v; })
+        ]));
+        sbox.appendChild(textField('Label', sitem.label, function(v){ sitem.label = v; }));
+      }, function(){ return { num: 0, suffix: '%', label: 'New result' }; });
+
+      box.appendChild(csBox);
+    }, function(){
+      return {
+        id: 'new-project-' + Math.random().toString(36).slice(2,7),
+        title: 'New Project', category: 'Category', size: 'span-3',
+        gradient: 'linear-gradient(135deg,#0F8B4C,#0A0A0A)',
+        client: '', industry: '', servicesProvided: '', year: String(new Date().getFullYear()),
+        overview: '', challenge: '', approach: '', solution: '', stats: []
+      };
+    });
   }));
 
   /* ================= CLIENTS ================= */
   panelsEl.appendChild(panel('Clients', data.clients.length + ' logos', function(body){
-    var helper = document.createElement('p');
-    helper.className = 'helper';
-    helper.textContent = 'Shown as a typographic logo wall — one name per cell.';
-    body.appendChild(helper);
     var list = document.createElement('div');
     body.appendChild(list);
     function redraw(){
@@ -393,63 +482,62 @@
     body.appendChild(textField('Copyright line', data.footer.copyright, function(v){ data.footer.copyright = v; }));
   }));
 
-  // Open the first panel by default.
+  /* ================= ENQUIRIES (LEADS) ================= */
+  panelsEl.appendChild(panel('Project Enquiries', '', function(body){
+    var list = document.createElement('div');
+    list.id = 'leadsList';
+    list.innerHTML = '<p class="empty-note">Loading…</p>';
+    body.appendChild(list);
+  }));
+
   if(panelsEl.firstChild) panelsEl.firstChild.classList.add('open');
   } // end renderForm
 
-  renderForm();
-
-  /* ---------- export / import ---------- */
-  function buildFileText(){
-    return "/* ============================================================\n" +
-      "   SITE CONTENT\n" +
-      "   This file is the single source of truth for all editable\n" +
-      "   copy on the site. Every page loads it and renders itself\n" +
-      "   from it. Edit it directly, or use admin.html to edit it\n" +
-      "   through a form and download a replacement copy.\n" +
-      "============================================================ */\n" +
-      "const SITE_DATA = " + JSON.stringify(data, null, 2) + ";\n";
+  function loadLeads(){
+    fetch('/api/enquiries').then(function(r){ return r.json(); }).then(function(leads){
+      var list = document.getElementById('leadsList');
+      if(!list) return;
+      if(!leads.length){
+        list.innerHTML = '<p class="empty-note">No enquiries submitted yet — they\'ll show up here as soon as someone uses the contact form.</p>';
+        return;
+      }
+      list.innerHTML = '';
+      leads.forEach(function(lead){
+        var box = document.createElement('div');
+        box.className = 'lead-item';
+        var when = new Date(lead.submittedAt).toLocaleString();
+        box.innerHTML =
+          '<div class="lead-top">'+
+            '<span class="lead-name">'+escapeHtml(lead.name)+' — '+escapeHtml(lead.email)+'</span>'+
+            '<span class="lead-meta">'+when+'</span>'+
+          '</div>'+
+          '<div class="lead-tags">'+
+            (lead.projectType ? '<span class="lead-tag">'+escapeHtml(lead.projectType)+'</span>' : '')+
+            (lead.budget ? '<span class="lead-tag">'+escapeHtml(lead.budget)+'</span>' : '')+
+            (lead.timeline ? '<span class="lead-tag">'+escapeHtml(lead.timeline)+'</span>' : '')+
+            (lead.company ? '<span class="lead-tag">'+escapeHtml(lead.company)+'</span>' : '')+
+          '</div>'+
+          '<div class="lead-detail">'+escapeHtml(lead.message)+'</div>';
+        var del = document.createElement('button');
+        del.className = 'lead-del';
+        del.textContent = 'Delete';
+        del.style.marginTop = '10px';
+        del.addEventListener('click', function(){
+          fetch('/api/enquiries/' + lead.id, { method: 'DELETE' }).then(function(){ loadLeads(); });
+        });
+        box.appendChild(del);
+        list.appendChild(box);
+      });
+    });
   }
 
-  document.getElementById('downloadBtn').addEventListener('click', function(){
-    var blob = new Blob([buildFileText()], { type: 'text/javascript' });
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = 'site-data.js';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    showStatus('Downloaded site-data.js — replace the file in your site folder, then refresh any page.');
-  });
+  function escapeHtml(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+    });
+  }
 
-  document.getElementById('resetBtn').addEventListener('click', function(){
-    if(confirm('Discard all unsaved changes in this form and reload from the current site-data.js?')){
-      window.location.reload();
-    }
-  });
-
-  document.getElementById('importInput').addEventListener('change', function(e){
-    var file = e.target.files[0];
-    if(!file) return;
-    var reader = new FileReader();
-    reader.onload = function(){
-      try{
-        var text = reader.result;
-        var fn = new Function(text + '\nreturn (typeof SITE_DATA !== "undefined") ? SITE_DATA : null;');
-        var imported = fn();
-        if(!imported) throw new Error('No SITE_DATA found in that file.');
-        data = JSON.parse(JSON.stringify(imported));
-        renderForm();
-        showStatus('Loaded ' + file.name + ' into the form below.');
-      }catch(err){
-        alert('Could not read that file as a valid site-data.js: ' + err.message);
-      }
-    };
-    reader.readAsText(file);
-  });
-
+  checkSession();
 })();
 </script>
 </body>

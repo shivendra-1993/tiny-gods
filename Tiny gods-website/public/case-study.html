@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work — Fieldwork</title>
-<meta name="description" content="Selected work from Fieldwork — fintech, healthcare, fashion, SaaS, education and mobility projects.">
+<title id="pageTitle">Case Study — Fieldwork</title>
+<meta name="description" content="A closer look at a Fieldwork project — challenge, approach, solution and results.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -17,6 +17,7 @@
     <nav class="primary">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
+      <a href="services.html">Services</a>
       <a href="work.html" class="active">Work</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -32,6 +33,7 @@
 <nav class="mobile-nav" id="mobileNav">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
+  <a href="services.html">Services</a>
   <a href="work.html" class="active">Work</a>
   <a href="contact.html">Contact</a>
   <a href="contact.html" class="btn btn-primary">Start a Project</a>
@@ -39,37 +41,56 @@
 
 <main id="top">
 
-<section class="page-hero">
-  <div class="wrap">
-    <div class="crumb reveal in-view"><a href="index.html">Home</a> / Work</div>
-    <h1 class="h1 reveal in-view">Selected work.</h1>
-    <p class="page-sub reveal in-view">A selection of projects where strategy, design and technology came together to create meaningful impact.</p>
-  </div>
+<section class="cs-hero wrap">
+  <div class="crumb reveal in-view"><a href="index.html">Home</a> / <a href="work.html">Work</a> / <span id="crumbTitle">Case Study</span></div>
+  <div class="eyebrow cs-cat reveal in-view" id="csCategory">Category</div>
+  <h1 class="h1 reveal in-view" id="csTitle">Project Title</h1>
+  <p class="cs-overview reveal in-view" id="csOverview">Overview copy.</p>
+
+  <dl class="cs-meta reveal in-view">
+    <div><dt>Client</dt><dd id="csClient">—</dd></div>
+    <div><dt>Industry</dt><dd id="csIndustry">—</dd></div>
+    <div><dt>Services</dt><dd id="csServices">—</dd></div>
+    <div><dt>Year</dt><dd id="csYear">—</dd></div>
+  </dl>
+
+  <div class="cs-cover reveal" id="csCover"></div>
 </section>
 
-<section class="section" id="work">
-  <div class="wrap">
-    <div class="work-grid reveal" id="workGridFull"></div>
+<div class="wrap">
 
-    <div class="proj-note reveal">
-      <span>Each project starts as a conversation.</span>
-      <a href="contact.html" class="btn btn-ghost" style="margin-left:auto;">Start Yours
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-      </a>
+  <div class="cs-body reveal">
+    <div class="cs-label">The Challenge</div>
+    <div class="cs-text" id="csChallenge"></div>
+  </div>
+
+  <div class="cs-body reveal">
+    <div class="cs-label">Our Approach</div>
+    <div class="cs-text" id="csApproach"></div>
+  </div>
+
+  <div class="cs-body reveal">
+    <div class="cs-label">The Solution</div>
+    <div>
+      <p class="cs-text" id="csSolution"></p>
+      <div class="cs-gallery" id="csGallery" style="margin-top:32px;"></div>
     </div>
   </div>
-</section>
 
-<!-- SERVICES -->
-<section class="section" id="services" style="padding-top:0;">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2 class="h2">What we bring to a project</h2>
-      <p class="lede">Six disciplines, one team — brought together depending on what the problem actually needs.</p>
-    </div>
-    <div class="service-list reveal" id="servicesList"></div>
+  <div class="cs-body reveal">
+    <div class="cs-label">Results</div>
+    <div class="cs-stats" id="csStats"></div>
   </div>
-</section>
+
+</div>
+
+<a class="cs-next wrap" id="csNextLink" href="work.html">
+  <div>
+    <div class="cs-next-label">Next Project</div>
+    <div class="cs-next-title" id="csNextTitle">View All Work</div>
+  </div>
+  <div class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></div>
+</a>
 
 </main>
 
@@ -83,8 +104,8 @@
     </div>
     <div class="footer-main">
       <div class="footer-brand"><div class="logo"><span class="dot"></span>Fieldwork</div><p data-cms="footer.tagline">Designing what comes next.</p></div>
-      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="work.html">Work</a></li></ul></div>
-      <div class="footer-col"><h4>Studio</h4><ul><li><a href="about.html#team">Team</a></li><li><a href="contact.html">Contact</a></li><li><a href="work.html#top">Back to top</a></li></ul></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="work.html">Work</a></li></ul></div>
+      <div class="footer-col"><h4>Studio</h4><ul><li><a href="about.html#team">Team</a></li><li><a href="contact.html">Contact</a></li><li><a href="#top">Back to top</a></li></ul></div>
       <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li><li><a href="#">Behance</a></li><li><a href="mailto:hello@fieldwork.studio" data-cms="contact.email">hello@fieldwork.studio</a></li></ul></div>
     </div>
     <div class="footer-bottom">
@@ -94,8 +115,7 @@
   </div>
 </footer>
 
-<script src="site-data.js"></script>
-<script src="render.js"></script>
 <script src="script.js"></script>
+<script src="render.js"></script>
 </body>
 </html>

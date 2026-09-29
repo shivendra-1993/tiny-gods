@@ -1,4 +1,4 @@
-(function(){
+window.initInteractions = function(){
   "use strict";
 
   /* ---------- header scroll state ---------- */
@@ -49,14 +49,16 @@
   /* ---------- animated counters ---------- */
   var counters = document.querySelectorAll('.stat .num');
   var animateCounter = function(el){
-    var target = parseInt(el.getAttribute('data-count'),10);
+    var target = parseFloat(el.getAttribute('data-count'));
     var suffix = el.getAttribute('data-suffix') || '';
     var duration = 1400, startTime = null;
+    var isFloat = target % 1 !== 0;
     var step = function(ts){
       if(!startTime) startTime = ts;
       var progress = Math.min((ts - startTime)/duration, 1);
       var eased = 1 - Math.pow(1-progress, 3);
-      el.textContent = Math.round(eased*target) + suffix;
+      var val = eased*target;
+      el.textContent = (isFloat ? val.toFixed(1) : Math.round(val)) + suffix;
       if(progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
@@ -72,14 +74,15 @@
 
   /* ---------- hero pixel grid animation (home page only) ---------- */
   var grid = document.getElementById('pixelGrid');
-  if(grid){
+  if(grid && !grid.dataset.built){
+    grid.dataset.built = '1';
     var cells = [];
     for(var i=0;i<72;i++){
       var d = document.createElement('div');
       grid.appendChild(d);
       cells.push(d);
     }
-    var palette = ['#F0F0F0','#F0F0F0','#F0F0F0','#0F8B4C','#8FE3B0','#0A0A0A'];
+    var palette = ['#1A1D1A','#1A1D1A','#1A1D1A','#22C55E','#15803D','#F2F3F1'];
     function pulseGrid(){
       var count = 6 + Math.floor(Math.random()*6);
       for(var i=0;i<count;i++){
@@ -87,7 +90,7 @@
           var cell = cells[Math.floor(Math.random()*cells.length)];
           var color = palette[Math.floor(Math.random()*palette.length)];
           cell.style.background = color;
-          setTimeout(function(){ cell.style.background = '#F0F0F0'; }, 1300 + Math.random()*900);
+          setTimeout(function(){ cell.style.background = '#1A1D1A'; }, 1300 + Math.random()*900);
         })();
       }
     }
@@ -98,6 +101,8 @@
   /* ---------- magnetic buttons ---------- */
   var magnets = document.querySelectorAll('.btn-primary, .btn-ghost');
   magnets.forEach(function(btn){
+    if(btn.dataset.magnetBound) return;
+    btn.dataset.magnetBound = '1';
     btn.addEventListener('mousemove', function(e){
       var r = btn.getBoundingClientRect();
       var x = e.clientX - r.left - r.width/2;
@@ -109,9 +114,10 @@
     });
   });
 
-  /* ---------- contact form validation (contact page only) ---------- */
+  /* ---------- contact form: submit to backend ---------- */
   var form = document.getElementById('projectForm');
-  if(form){
+  if(form && !form.dataset.bound){
+    form.dataset.bound = '1';
     var submitBtn = document.getElementById('submitBtn');
     var formStatus = document.getElementById('formStatus');
     var successState = document.getElementById('successState');
@@ -148,13 +154,33 @@
       submitBtn.textContent = 'Sending…';
       formStatus.textContent = '';
 
-      setTimeout(function(){
+      var payload = {
+        name: name, email: email,
+        company: form.company.value.trim(),
+        phone: form.phone.value.trim(),
+        projectType: projectType,
+        budget: form.budget.value,
+        timeline: form.timeline.value,
+        message: message,
+        source: form.source.value.trim()
+      };
+
+      fetch('/api/enquiries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(res){
+        if(!res.ok) throw new Error('Request failed');
+        return res.json();
+      }).then(function(){
         successState.classList.add('show');
         form.reset();
+      }).catch(function(){
+        formStatus.textContent = 'Something went wrong sending that — please try again.';
+      }).finally(function(){
         submitBtn.disabled = false;
         submitBtn.innerHTML = 'Send Project Enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>';
-      }, 1100);
+      });
     });
   }
-
-})();
+};
