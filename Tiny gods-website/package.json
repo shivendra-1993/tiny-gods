@@ -1,15 +1,17 @@
 {
   "name": "fieldwork-site",
   "version": "1.0.0",
-  "description": "Fieldwork agency site — Express backend + content API + static frontend",
-  "main": "server.js",
+  "description": "Fieldwork agency site — static frontend + Netlify Functions API + Netlify Database",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "netlify dev"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "express-session": "^1.18.0"
-  }
+    "@netlify/database": "^2.0.1",
+    "@netlify/functions": "^6.0.0",
+    "drizzle-orm": "^1.0.0-beta.22"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^1.0.0-beta.22"
+  },
+  "type": "module"
 }
